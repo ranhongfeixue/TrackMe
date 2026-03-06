@@ -29,6 +29,7 @@ func staticFile(file string) RouteHandler {
 }
 
 func apiAll(res types.Response, _ url.Values) ([]byte, string, error) {
+	res.TCPIP = types.TCPIPDetails{}
 	return []byte(res.ToJson()), "application/json", nil
 }
 
